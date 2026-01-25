@@ -1,0 +1,31 @@
+name: Build and Release Jar
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build jar
+        run: mvn clean package
+
+      - name: Create Release and upload jar
+        uses: ncipollo/release-action@v1
+        with:
+          tag: v1.0                     
+          name: DBAdmin v1.0
+          body: "Self-contained DBAdmin fat jar. Run with `java -jar dbadmin.jar`"
+          artifacts: target/dbadmin.jar
