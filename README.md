@@ -4,8 +4,8 @@
 
 **Prerequisites:** Java 17 installed
 
-1. Download and extract jar from below link:
-   [dbadmin.jar](https://github.com/Iannen/DbAdmin/actions/runs/21333612773/artifacts/5248877264)
+1. Download dbadmin.jar from following page:
+   [dbadmin.jar](https://github.com/Iannen/DbAdmin/releases/tag/v1.0)
 
 2. Open a terminal/command prompt at the location where the jar was downloaded.
 
