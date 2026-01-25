@@ -4,7 +4,7 @@
 
 **Prerequisites:** Java 17 installed
 
-1. Download the fat jar from GitHub Actions:
+1. Download and extract jar from below link:
    [dbadmin.jar](https://github.com/Iannen/DbAdmin/actions/runs/21333612773/artifacts/5248877264)
 
 2. Open a terminal/command prompt at the location where the jar was downloaded.
@@ -13,6 +13,7 @@
 
 ```bash
 java -jar dbadmin.jar
+```
 
 
-(https://github.com/h671420/DAT107_Oblig3)
+(For bookkeeping purposes, Previous repo -> https://github.com/h671420/DAT107_Oblig3)
