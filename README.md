@@ -1,6 +1,10 @@
 # DBAdmin
 
-## Run Instructions
+## Background
+
+This project was [an ungraded obligatory assignment](https://github.com/Iannen/DbAdmin/blob/main/DAT107%20obl3%20v%C3%A5ren%202023.pdf) at Western Norway University of Applied Sciences (HVL) for the course 'DAT107 Database Systems'
+
+It was developed as a collaborative effort of group 26 in the spring of 2023, group member initials are CH, TS and EAH (They have not been contacted about this republish so I am hesitant to publish full names)
 
 ## Run Instructions
 
