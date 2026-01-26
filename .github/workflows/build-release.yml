@@ -28,7 +28,9 @@ jobs:
       - name: Create Release and upload jar
         uses: ncipollo/release-action@v1
         with:
-          tag: v1.0                     
-          name: DBAdmin v1.0
+          tag: latest              
+          name: DBAdmin (latest)
           body: "Self-contained DBAdmin fat jar. Run with `java -jar dbadmin.jar`"
           artifacts: target/dbadmin.jar
+          allowUpdates: true
+          replacesArtifacts: true
