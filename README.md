@@ -11,7 +11,7 @@ It was developed as a collaborative effort of group 26 in the spring of 2023, gr
 **Prerequisites:** Java 17 installed
 
 1. Download dbadmin.jar from following page: 
-   [DBAdmin v1.0](https://github.com/Iannen/DbAdmin/releases/tag/v1.0)
+   [DBAdmin v1.0](https://github.com/Iannen/DbAdmin/releases/tag/latest)  
    (feel free to DL source code or clone repo if you want to take a look)
 
 3. Open a terminal/command prompt at the location where the jar was downloaded.
