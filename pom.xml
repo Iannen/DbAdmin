@@ -68,6 +68,32 @@
         </executions>
       </plugin>
 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+            <execution>
+                <id>enforce-env-vars</id>
+                <goals>
+                    <goal>enforce</goal>
+                </goals>
+                <configuration>
+                    <rules>
+                        <requireEnvironmentVariable>
+                            <variables>
+                                <variable>DB_URL</variable>
+                                <variable>DB_USER</variable>
+                                <variable>DB_PASS</variable>
+                            </variables>
+                        </requireEnvironmentVariable>
+                    </rules>
+                    <fail>true</fail>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+
     </plugins>
   </build>
 
