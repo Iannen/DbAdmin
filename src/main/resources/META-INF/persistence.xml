@@ -13,12 +13,10 @@
         
 		<properties>
 			<property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
-			<property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://ider-database.westeurope.cloudapp.azure.com:5432/h671420" />
-			<property name="jakarta.persistence.jdbc.user" value="h671420" />
-			<property name="jakarta.persistence.jdbc.password" value="pass" />
-
-			<!-- Se https://wiki.eclipse.org/EclipseLink/Examples/JPA/Logging -->
+			<property name="jakarta.persistence.jdbc.url" value="${env.DB_URL}" />
+			<property name="jakarta.persistence.jdbc.user" value="${env.DB_USER}" />
+			<property name="jakarta.persistence.jdbc.password" value="${env.DB_PASS}" />
 			<property name="eclipselink.logging.level" value="SEVERE" />
-        </properties>
+		</properties>
 	</persistence-unit>
 </persistence> 
