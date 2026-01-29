@@ -2,7 +2,7 @@ package DAO;
 
 import entities.Ansatt;
 import entities.Avdeling;
-import entities.asd;
+import entities.Entitet;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -12,7 +12,7 @@ public class AvdelingDAO implements Dao{
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("Oblig_3");
 
     @Override
-    public <T extends asd> void leggTil(T nyEntitet) {
+    public <T extends Entitet> void leggTil(T nyEntitet) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 
@@ -39,7 +39,6 @@ public class AvdelingDAO implements Dao{
             TypedQuery<Avdeling> tq = em.createQuery("SELECT a FROM Avdeling a WHERE a.id != 1", Avdeling.class);
             return tq.getResultList();
         } catch (Exception e) {
-//            e.printStackTrace();
             System.out.println("finnAvdelinger() feilet");
             return null;
         } finally {
@@ -54,7 +53,6 @@ public class AvdelingDAO implements Dao{
         try {
             return em.find(Avdeling.class, id);
         } catch (Exception e) {
-//            e.printStackTrace();
             System.out.println("finnAvdeling() feilet");
             return null;
         } finally {
@@ -82,7 +80,7 @@ public class AvdelingDAO implements Dao{
     }
 
     @Override
-    public <T extends asd> void oppdater(T oppdatertEntitet) {
+    public <T extends Entitet> void oppdater(T oppdatertEntitet) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 
@@ -99,7 +97,7 @@ public class AvdelingDAO implements Dao{
     }
 
     @Override
-    public <T extends asd> void slett(T entitet) {
+    public <T extends Entitet> void slett(T entitet) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 

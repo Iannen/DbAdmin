@@ -12,8 +12,7 @@ import static tekstgrensesnitt.Statics.hoyrePad;
 
 @Entity
 @Table(schema = "Oblig_3")
-public class Ansatt implements asd{
-    //<editor-fold desc="objektvariabler">
+public class Ansatt implements Entitet{
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ans_id")
@@ -33,8 +32,7 @@ public class Ansatt implements asd{
     private String stilling;
     @Column(name="mnd_lonn")
     private Integer mndLonn;
-    //</editor-fold>
-    //<editor-fold desc="ansatt spesifikke metoder">
+
     public boolean erSjef(){
         if (avdeling!=null&&avdeling.getSjef().equals(this))
             return true;
@@ -43,9 +41,7 @@ public class Ansatt implements asd{
     public void createUserName() {
         userName= ""+fornavn.toLowerCase().charAt(0)+etternavn.toLowerCase().charAt(0)+ id;
     }
-    //</editor-fold>
 
-    //<editor-fold desc="interface metoder">
     @Override
     public String getEntId() {
         if (getId()==null)
@@ -99,9 +95,6 @@ public class Ansatt implements asd{
     public String getNavn() {
         return getFornavn()+" "+getEtternavn();
     }
-    //</editor-fold>
-
-    //<editor-fold desc ="equals, hash, getters & setters">
 
     @Override
     public boolean equals(Object o) {
@@ -183,5 +176,4 @@ public class Ansatt implements asd{
     public void setMndLonn(Integer mndLonn) {
         this.mndLonn = mndLonn;
     }
-    //</editor-fold>
 }

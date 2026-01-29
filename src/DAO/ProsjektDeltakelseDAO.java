@@ -9,7 +9,7 @@ public class ProsjektDeltakelseDAO implements Dao {
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("Oblig_3");
 
     @Override
-    public <T extends asd> void leggTil(T nyEntitet) {
+    public <T extends Entitet> void leggTil(T nyEntitet) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
@@ -55,12 +55,12 @@ public class ProsjektDeltakelseDAO implements Dao {
 
 
     @Override
-    public <T extends asd> void oppdater(T oppdatertEntitet) {
+    public <T extends Entitet> void oppdater(T oppdatertEntitet) {
 
     }
 
     @Override
-    public <T extends asd> void slett(T entitet) {
+    public <T extends Entitet> void slett(T entitet) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {

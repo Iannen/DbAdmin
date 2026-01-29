@@ -2,7 +2,7 @@ package entities;
 
 import java.util.ArrayList;
 
-public interface asd {
+public interface Entitet {
     String getNavn();
 
     String getEntId();

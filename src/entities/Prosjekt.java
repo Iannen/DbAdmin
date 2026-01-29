@@ -11,8 +11,7 @@ import static tekstgrensesnitt.Statics.hoyrePad;
 
 @Entity
 @Table(schema ="Oblig_3")
-public class Prosjekt implements asd {
-    //<editor-fold desc="objektvariabler">
+public class Prosjekt implements Entitet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "prosj_id")
@@ -23,8 +22,6 @@ public class Prosjekt implements asd {
     private String beskrivelse;
     @OneToMany(mappedBy = "prosjekt",cascade = CascadeType.PERSIST)
     private List<ProsjektDeltakelse> deltakelser=new ArrayList<>();
-    //</editor-fold>
-    //<editor-fold desc="interface metoder">
 
     @Override
     public Integer getId() {
@@ -59,8 +56,7 @@ public class Prosjekt implements asd {
 
         return allinfo;
     }
-    //</editor-fold>
-    //<editor-fold desc="equals, hash, getters & setters">
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -102,5 +98,4 @@ public class Prosjekt implements asd {
     public int hashCode() {
         return Objects.hash(id);
     }
-    //</editor-fold>
 }

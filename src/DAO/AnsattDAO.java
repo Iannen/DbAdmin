@@ -2,11 +2,10 @@ package DAO;
 
 import entities.Ansatt;
 import entities.Avdeling;
-import entities.asd;
+import entities.Entitet;
 import jakarta.persistence.*;
 
 import java.lang.Exception;
-import java.time.LocalDate;
 import java.util.List;
 
 
@@ -15,7 +14,7 @@ public class AnsattDAO implements Dao {
 
 
     @Override
-    public <T extends asd> void leggTil(T nyEntitet) {
+    public <T extends Entitet> void leggTil(T nyEntitet) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 
@@ -46,7 +45,6 @@ public class AnsattDAO implements Dao {
             TypedQuery<Ansatt> tq = em.createQuery("SELECT a FROM Ansatt a WHERE a.id != 1", Ansatt.class);
             return tq.getResultList();
         } catch (Exception e) {
-//            e.printStackTrace();
             System.out.println("finnAnsatte() feilet");
             return null;
         } finally {
@@ -61,7 +59,6 @@ public class AnsattDAO implements Dao {
         try {
             return em.find(Ansatt.class, ansId);
         } catch (Exception e) {
-//            e.printStackTrace();
             System.out.println("finnAnsatt() feilet");
             return null;
         } finally {
@@ -83,7 +80,7 @@ public class AnsattDAO implements Dao {
     }
 
     @Override
-    public <T extends asd> void oppdater(T oppdatertEntitet) {
+    public <T extends Entitet> void oppdater(T oppdatertEntitet) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 
@@ -115,15 +112,13 @@ public class AnsattDAO implements Dao {
             ansatt.setAvdeling(avdeling);
             tx.commit();
         } catch (Exception e) {
-
-//            e.printStackTrace();
         } finally {
             em.close();
         }
     }
 
     @Override
-    public <T extends asd> void slett(T entitet) {
+    public <T extends Entitet> void slett(T entitet) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 

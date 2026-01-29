@@ -2,7 +2,7 @@ package DAO;
 
 import entities.Ansatt;
 import entities.Prosjekt;
-import entities.asd;
+import entities.Entitet;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -11,7 +11,7 @@ public class ProsjektDAO implements Dao {
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("Oblig_3");
 
     @Override
-    public <T extends asd> void leggTil(T nyEntitet) {
+    public <T extends Entitet> void leggTil(T nyEntitet) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 
@@ -57,7 +57,7 @@ public class ProsjektDAO implements Dao {
 
 
     @Override
-    public <T extends asd> void oppdater(T oppdatertEntitet) {
+    public <T extends Entitet> void oppdater(T oppdatertEntitet) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 
@@ -74,7 +74,7 @@ public class ProsjektDAO implements Dao {
     }
 
     @Override
-    public <T extends asd> void slett(T entitet) {
+    public <T extends Entitet> void slett(T entitet) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 

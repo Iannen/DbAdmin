@@ -11,8 +11,7 @@ import static tekstgrensesnitt.Statics.hoyrePad;
 
 @Entity
 @Table(schema ="Oblig_3")
-public class Avdeling implements asd{
-    //<editor-fold desc="objektvariabler">
+public class Avdeling implements Entitet{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "avd_id")
@@ -24,10 +23,6 @@ public class Avdeling implements asd{
     private List<Ansatt> ansatte=new ArrayList<>();
     String navn;
 
-    //</editor-fold>
-    //<editor-fold desc="avdeling spesifikke metoder">
-    //</editor-fold>
-    //<editor-fold desc="interface metoder">
     @Override
     public String getNavn() {
         return navn;
@@ -65,9 +60,6 @@ public class Avdeling implements asd{
         }
         return allinfo;
     }
-    //</editor-fold>
-
-    //<editor-fold desc = "equals, hash, getters & setters">
 
     @Override
     public boolean equals(Object o) {
@@ -105,5 +97,4 @@ public class Avdeling implements asd{
     public void setNavn(String navn) {
         this.navn = navn;
     }
-    //</editor-fold>
 }

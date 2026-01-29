@@ -9,8 +9,7 @@ import static tekstgrensesnitt.Statics.hoyrePad;
 
 @Entity
 @Table(schema ="Oblig_3")
-public class ProsjektDeltakelse implements asd{
-    //<editor-fold desc="objektvariabler">
+public class ProsjektDeltakelse implements Entitet{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "prosjekt_deltakelse_id")
@@ -25,8 +24,6 @@ public class ProsjektDeltakelse implements asd{
     @Column(name = "ant_timer")
     private Integer timer;
 
-    //</editor-fold>
-    //<editor-fold desc="interface metoder">
     @Override
     public String getNavn() {
         return null;
@@ -54,8 +51,7 @@ public class ProsjektDeltakelse implements asd{
         allinfo.add("\t#Timer:\t"+timer);
         return allinfo;
     }
-    //</editor-fold>
-    //<editor-folding desc="prosjektdeltakelse spesifikke metoder">
+
     public String kortInfoProsjekt() {
         return hoyrePad("ID: "+prosjekt.getEntId(),9)
                 +hoyrePad("Navn: "+prosjekt.getNavn(),30)
@@ -69,8 +65,6 @@ public class ProsjektDeltakelse implements asd{
                 +hoyrePad("Rolle: "+rolle,30)
                 +hoyrePad("\tTimer: "+timer,0);
     }
-    //</editor-folding>
-    //<editor-fold desc="equals, hash, getters & setters">
 
     public void setId(Integer id) {
         this.id = id;
@@ -120,5 +114,4 @@ public class ProsjektDeltakelse implements asd{
     public int hashCode() {
         return Objects.hash(id);
     }
-    //</editor-fold>
 }

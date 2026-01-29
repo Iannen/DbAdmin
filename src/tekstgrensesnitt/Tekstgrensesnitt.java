@@ -3,7 +3,6 @@ package tekstgrensesnitt;
 import DAO.*;
 import entities.*;
 
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,21 +12,13 @@ import java.util.function.Consumer;
 import static tekstgrensesnitt.Statics.*;
 
 public class Tekstgrensesnitt {
-    //TODO: legge inn menyvalg 5 "legg til en ny medarbeider" i avdelingadministrasjon (evt stjel en ansatt + map for å velge en å kvitte seg med
-    //TODO: legg inn en 'tøm avdeling' rutine som kjøres når en avdeling slettes
 
-    //TODO: se til at ingen deprecated Statics metoder brukes
-    //TODO: se til at alle kall på velgentitet() har optimale liste
-    //TODO: få inn rolle i prosjekt entitetsmeny info
-
-    //<editor-folding desc="objektvariabler"
     private final AnsattDAO ansDAO = new AnsattDAO();
     private final AvdelingDAO avdDAO = new AvdelingDAO();
     private final ProsjektDAO proDAO = new ProsjektDAO();
     private final ProsjektDeltakelseDAO proDDao = new ProsjektDeltakelseDAO();
     static Scanner scanner = new Scanner(System.in);
 
-    //</editor-folding>
     public static void main(String[] args) {
         Tekstgrensesnitt tk = new Tekstgrensesnitt();
         tk.hovedMeny();
@@ -64,7 +55,7 @@ public class Tekstgrensesnitt {
         System.out.println("\t4. Avslutt DBAdmin");
     }
 
-    private <T extends asd> void entiteterMeny(Class<T> entitetsKlasse) {
+    private <T extends Entitet> void entiteterMeny(Class<T> entitetsKlasse) {
         List<T> entiteter;
         Dao dao = null;
         Runnable leggTil = null;
@@ -112,7 +103,7 @@ public class Tekstgrensesnitt {
         }
     }
 
-    private <T extends asd> void visEntiteterMeny(List<T> entiteter, Class<T> entitetsKlasse) {
+    private <T extends Entitet> void visEntiteterMeny(List<T> entiteter, Class<T> entitetsKlasse) {
         clearConsole();
         String enTallNy = "";
         String enTall = "";
@@ -200,14 +191,6 @@ public class Tekstgrensesnitt {
                         proIder.put(pd.getProsjekt().getEntId(), pd.getId());
                     if (proIder.containsKey(input))
                         administrerProsjektDeltakelseMeny(proIder.get(input));
-
-
-/*                case "4":
-                    administrerProsjektDeltakelserMeny(ansatt.getId(), null);
-                    break;
-                case "5":
-                    administrerAnsattDetaljerMeny(ansatt.getId());
-                    break;*/
             }
         }
     }
@@ -303,9 +286,6 @@ public class Tekstgrensesnitt {
                     }
                     break;
                 case "3":
-                    /*String navn = Statics.getStringInput(4, "et", "avdelingsnavn", true);
-                    if (navn != null)
-                        avdDAO.endreNavn(avdId, navn);*/
                     avdeling.setNavn(Statics.getStringInput(4, "et", "avdelingsnavn", true));
                     if (avdeling.getNavn() != null)
                         avdDAO.oppdater(avdeling);
@@ -453,7 +433,7 @@ public class Tekstgrensesnitt {
         System.out.println("\t4. Rediger timer");
     }
 
-    private <T extends asd> T velgEntitetRutine(List<T> entiteter, Class<T> entitetsKlasse) {
+    private <T extends Entitet> T velgEntitetRutine(List<T> entiteter, Class<T> entitetsKlasse) {
         String enTall = "";
         String flerTall = "";
         switch (entitetsKlasse.getSimpleName()) {
@@ -745,7 +725,6 @@ public class Tekstgrensesnitt {
                     return;
                 }
                 rutineHeader = "\nAnsatt: " + ny.getAnsatt().getNavn() + " Prosjekt: " + ny.getProsjekt().getNavn();
-//TODO: fikse slik at alle entitetet kommer ut sortert på id
                 visAdministrerProsjektMeny((Prosjekt) entitet);
                 System.out.println(rutineHeader);
                 ny.setRolle(Statics.getStringInput2(4, "en", "rolle", true));
@@ -784,7 +763,7 @@ public class Tekstgrensesnitt {
         }
     }
 
-    private <T extends asd> boolean slettPrompt(T entity) {
+    private <T extends Entitet> boolean slettPrompt(T entity) {
         boolean running = true;
         boolean slett = false;
         while (running) {

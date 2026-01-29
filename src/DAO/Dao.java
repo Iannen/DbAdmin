@@ -1,21 +1,21 @@
 package DAO;
 
-import entities.asd;
+import entities.Entitet;
 
 import java.util.List;
 
 public interface Dao {
     //Create
-    <T extends asd> void leggTil(T nyEntitet);
+    <T extends Entitet> void leggTil(T nyEntitet);
 
     //Read
-    <T extends asd> List<T> finnAlle();
+    <T extends Entitet> List<T> finnAlle();
 
-    <T extends asd> T finn(int id);
+    <T extends Entitet> T finn(int id);
 
     //Update
-    <T extends asd> void oppdater(T oppdatertEntitet);
+    <T extends Entitet> void oppdater(T oppdatertEntitet);
 
     //Delete
-    <T extends asd> void slett(T entitet);
+    <T extends Entitet> void slett(T entitet);
 }
