@@ -29,7 +29,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: latest              
-          name: DBAdmin (latest)
+          name: DBAdmin (latestosaur)
           body: "Self-contained DBAdmin fat jar. Run with `java -jar dbadmin.jar`"
           artifacts: target/dbadmin.jar
           allowUpdates: true
