@@ -15,7 +15,7 @@ It was written as a collaborative effort of group 26 in the spring of 2023.
 ## The app
 
 The application presents the user with various menus related to managing the employees, department and projects of a fictional and unnamed organization.
-No distinction is made between different sorts of users, and there is not authentication. Perhaps one can take the view that the application would only be accessible to an already authenticated admin user
+No distinction is made between different sorts of users, and there is not authentication. Perhaps one can take the view that the application would only be accessible to an already authenticated admin user?
 
 The rules are:
 - Each employee must belong to exactly 1 departement. If no departments exists, a hidden department 'init' is used
