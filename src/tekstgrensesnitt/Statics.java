@@ -181,8 +181,6 @@ public class Statics {
         return "--------------------------------------------------------------------------------------------------------------";
     }
     public static String hoyrePad(String input, int bredde){
-        while (input.length()<bredde)
-            input=input+" ";
-        return input;
+        return String.format("%" + bredde + "s", input);
     }
 }

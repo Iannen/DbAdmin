@@ -17,7 +17,7 @@ public class Tekstgrensesnitt {
     private final AvdelingDAO avdDAO = new AvdelingDAO();
     private final ProsjektDAO proDAO = new ProsjektDAO();
     private final ProsjektDeltakelseDAO proDDao = new ProsjektDeltakelseDAO();
-    static Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in, "UTF-8");
 
     public static void main(String[] args) {
         Tekstgrensesnitt tk = new Tekstgrensesnitt();
