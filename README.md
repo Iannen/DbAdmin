@@ -39,4 +39,3 @@ The rules are:
 ```bash
 java -jar dbadmin.jar
 ```
-
